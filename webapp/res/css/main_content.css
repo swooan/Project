@@ -1,0 +1,491 @@
+
+<!--
+리뷰 슬라이드-->body {
+	background-color: #f3f3f3;
+}
+
+.reviewdiv .slick-arrow {
+	z-index: 10;
+	top: 185px;
+	width: 50px;
+	height: 60px;
+}
+
+.reviewdiv .slick-next {
+	right: -50px;
+}
+
+.reviewdiv .slick-arrow::before {
+	content: "";
+	display: block;
+	width: 14px;
+	height: 26px;
+	margin: 0 auto;
+}
+
+.reviewdiv .slick-prev::before {
+	background:
+		url('https://kimyang-sun.github.io/pf-img/samsung-img/new-marketing-arw-left.svg');
+}
+
+.reviewdiv .slick-next::before {
+	background:
+		url('https://kimyang-sun.github.io/pf-img/samsung-img/new-marketing-arw-right.svg');
+	position: relative;
+    left: 30px;
+}
+
+<!--
+리뷰 슬라이드 끝--><!--미식가 슬라이드-->.epicureandiv .slick-arrow {
+	z-index: 10;
+	top: 185px;
+	width: 50px;
+	height: 60px;
+}
+
+.epicureandiv .slick-next {
+	right: -50px;
+}
+
+.epicureandiv .slick-arrow::before {
+	content: "";
+	display: block;
+	width: 14px;
+	height: 26px;
+	margin: 0 auto;
+}
+
+.epicureandiv .slick-prev::before {
+	background:
+		url('https://kimyang-sun.github.io/pf-img/samsung-img/new-marketing-arw-left.svg');
+}
+
+.epicureandiv .slick-next::before {
+	background:
+		url('https://kimyang-sun.github.io/pf-img/samsung-img/new-marketing-arw-right.svg');
+	position: relative;
+    left: 30px;
+}
+
+
+
+<!--
+미식가 슬라이드 끝-->#body {
+	text-align: center;
+	padding-top: 5px;
+}
+
+.category {
+	position: relative;
+    left: -15px;
+    top: 250px;
+}
+
+.categoryspan {
+	margin-left: 905px;
+	padding: 10px 10px 10px 10px;
+	border-radius: 5px;
+	color: #444;
+	font-size: large;
+	font-weight: bold;
+}
+
+.category0 {
+	margin-top: 30px;
+	position: relative;
+	width: 1200px;
+	height: 200px;
+	left: 321px;
+}
+
+.categorydiv {
+	height: 200px;
+	width: 330px;
+	margin-left: 70px;
+	float: left;
+}
+
+.categorydiv:HOVER {
+	cursor: pointer;
+	 filter: brightness(70%);
+}
+
+.categorydiv>.categorydiv2 {
+	position: relative;
+	text-align: center;
+	top: -118px;
+	color: white;
+	font-weight: bolder;
+}
+
+.categorydiv>img {
+	width: 330px;
+	height: 200px;
+	border-radius: 10px;
+	border: 1px solid black;
+}
+
+.review {
+	position: relative;
+    left: 315px;
+    top: 380px;
+}
+
+.reviewspan {
+	margin-left: 573px;
+	padding: 10px 10px 10px 10px;
+	border-radius: 5px;
+	color: #444;
+	font-size: large;
+	font-weight: bold;
+}
+
+.reviewdiv {
+	position: relative;
+	top: 30px;
+	width: 1200px;
+	height: 500px;
+}
+
+.reviewdiv1 {
+	float: left;
+	width: 330px;
+	height: 500px;
+	position: relative;
+	margin-left: 10px;
+	left: 50px;
+	border-radius: 10px;
+}
+
+.reviewdiv2 {
+	position: relative;
+	border: 1px solid black;
+	width: 330px;
+	height: 150px;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.reviewdiv2img {
+	position: relative;
+	width: 330px;
+	height: 150px;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.review_img_div {
+	position: relative;
+	top: -60px;
+	left: 10px;
+	z-index: 2;
+	color: white;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.reviewdiv3 {
+	border: 1px solid black;
+	width: 330px;
+	height: 250px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.profile {
+	width: 40px;
+	height: 40px;
+	position: relative;
+	left: 10px;
+	top: 10px;
+}
+
+.info {
+	position: relative;
+	left: 55px;
+	bottom: 30px;
+	font-size: small;
+}
+
+.infocount {
+	font-size: 11px;
+	left: 1px;
+	position: relative;
+}
+
+.infostar>* {
+	float: left;
+}
+
+.starVoid {
+	width: 20px;
+	height: 20px;
+	background-repeat: no-repeat;
+	background-image:
+		url('http://localhost:8080/hellospring/res/image/star1.jpg');
+}
+
+.starFull {
+	width: 20px;
+	height: 20px;
+	background-repeat: no-repeat;
+	background-image:
+		url('http://localhost:8080/hellospring/res/image/star2.jpg');
+}
+
+.starHalf {
+	width: 20px;
+	height: 20px;
+	background-repeat: no-repeat;
+	background-image:
+		url('http://localhost:8080/hellospring/res/image/star3.jpg');
+}
+
+.infograde {
+	position: relative;
+	left: 220px;
+	width: 40px;
+	height: 23px;
+	border: 1px solid darkred;
+	border-radius: 10px;
+}
+
+.infogradespan {
+	position: relative;
+	bottom: 16px;
+	left: 5px;
+	color: darkred;
+}
+
+.infopreview {
+	position: relative;
+	top: 10px;
+	left: -45px;
+	width: 300px;
+	height: 150px;
+}
+
+.infodetail {
+	position: relative;
+	top: 10px;
+	left: 225px;
+	width: 45px;
+	height: 20px;
+}
+
+.infodetail>a:link {
+	color: #c91b3c;
+	text-decoration: none;
+}
+
+.infodetail>a:visited {
+	color: #c91b3c;
+	text-decoration: none;
+}
+
+.infodetail>a:hover {
+	color: #c91b3c;
+	text-decoration: none;
+}
+
+.reviewspan2 {
+	width: 280px;
+	height: 150px;
+	word-break: break-all;
+}
+
+.benefit {
+  position: relative;
+    top: 60px;
+    width: 1200px;
+    height: 500px;
+    left: 316px;
+}
+
+.benefit .epicureanspan {
+   margin-left: 538px;
+}
+
+.epicurean {
+	position: relative;
+    top: 135px;
+    width: 1200px;
+    height: 500px;
+    left: 316px;
+}
+
+.epicureandiv {
+	position: relative;
+	top: 30px;
+	width: 1200px;
+	height: 500px;
+}
+
+.epicureandiv1 {
+	float: left;
+	width: 330px;
+	height: 500px;
+	position: relative;
+	margin-left: 10px;
+	left: 50px;
+	border-radius: 10px;
+}
+
+.epicureandiv2 {
+	position: relative;
+	border: 1px solid black;
+	width: 330px;
+	height: 250px;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.epicureandiv3 {
+	border: 1px solid black;
+	width: 330px;
+	height: 150px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.epicureandiv2img {
+	position: relative;
+	width: 330px;
+	height: 250px;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.epicureandiv3div {
+	position: relative;
+	left: 13px;
+	top: 11px;
+	height: 20px;
+	font-size: 15px;
+	font-weight: 600;
+	margin: 10px 0;
+	color: #404040;
+	width: 330px;
+}
+
+.epicureandiv3div2 {
+	position: relative;
+	top: 14px;
+	color: #404040;
+	left: 13px;
+	font-size: 12px;
+	font-weight: bolder;
+	word-break: break-all;
+	width: 310px;
+	height: 55px;
+}
+
+.epicureandiv3hr {
+	width: 300px;
+	border: 0.5px solid lightgrey;
+}
+
+.epicureandiv3div3 {
+	position: relative;
+	left: 270px;
+	font-size: 11px;
+	top: 7px;
+	color: #c91b3c;
+}
+
+.epicureandiv3div3>a:link {
+	color: #c91b3c;
+	text-decoration: none;
+}
+
+.epicureandiv3div3>a:visited {
+	color: #c91b3c;
+	text-decoration: none;
+}
+
+.epicureandiv3div3>a:hover {
+	color: #c91b3c;
+	text-decoration: none;
+}
+
+.epicureanspan {
+	margin-left: 566px;
+	padding: 10px 10px 10px 10px;
+	border-radius: 5px;
+	color: #444;
+	font-size: large;
+	font-weight: bold
+}
+
+.circle{ 
+ position: relative;
+    width: 1887px;
+    top: 148px;
+}
+.circlediv {
+   position: relative;
+    width: 1200px;
+    height: 400px;
+    left: 360px;
+    top: 130px;
+}
+.circlediv1 {
+   position: relative;
+   width: 1200px;
+   height: 400px;	
+}
+.circlediv2 {
+   position: relative;
+   float: left;
+}
+.circlespan {
+	position: relative;
+    left: 894px;
+    top: 98px;
+    color: #444;
+    font-size: large;
+    font-weight: bold;
+}
+.circleimg {
+    position: relative;
+    border-radius: 125px;
+    border: 1px solid black;
+    width: 250px;
+    height: 250px;
+} 
+
+.circlediv1 .slick-arrow::before {
+	content: "";
+	display: block;
+	width: 14px;
+	height: 26px;
+	margin: 0 auto;
+}
+
+.circlediv1 .slick-prev::before {
+	background:
+		url('https://kimyang-sun.github.io/pf-img/samsung-img/new-marketing-arw-left.svg');
+	position: relative;
+    left: -40px;
+    top: -75px;
+}
+
+.circlediv1 .slick-next::before {
+	background:
+		url('https://kimyang-sun.github.io/pf-img/samsung-img/new-marketing-arw-right.svg');
+	position: relative;
+    left: 10px;
+    top: -75px;
+}
+.circlediv3 {
+   text-align: center;
+    position: relative;
+    top:-160px;
+    width: 250px;
+    height: 30px;
+    color: white;
+    font-weight: bolder;
+}
+.circlediv4 {
+   width: 250px;
+    height: 30px;
+    position: relative;
+    top: -145px;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+}

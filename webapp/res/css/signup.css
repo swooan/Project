@@ -1,0 +1,338 @@
+.Signupform {
+    position: relative;
+    top: 70px;
+    left: 20px;
+    width: 800px;
+    height: 800px;
+    margin-left: 530px;
+
+}
+.Signupform>span {
+    float: left;
+    width: 600px;
+    height: 80px;
+    position: relative;
+    margin-left: 150px;
+}
+.Signupform h4 {
+    position: relative;
+    margin: 0;
+    clear: both;
+    margin-left: 200px;
+}
+.Signupform>span>input {
+    width: 450px;
+    height: 40px;
+    margin-left: 50px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+.signupdiv {
+    width: 458px;
+    height: 50px;
+    margin-left: 200px;
+    margin-top: 10px;
+    background-color: #FFBC00;
+    color: white;
+    font-size: 25px;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+.Signupform>span>div {
+    width: 150px;
+    height: 45px;
+    position: relative;
+    float: left;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.Signupform>span>div>.Signupbirth {
+    position: relative;
+    width: 130px;
+    height: 40px;
+    margin: 0;
+    margin-left: 20px;
+    padding: 0;
+}
+.Signupform>span>div>.Signupbirth2 {
+    position: relative;
+    width: 130px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+}
+.Signupform>span>div>.Signupbirthselect {
+    position: relative;
+    width: 130px;
+    height: 44px;
+    margin: 0;
+    margin-left: 5px;
+    padding-left: 5px;
+    font-size: 15px;
+}
+.Signupform>span>.Signupgender {
+    width: 460px;
+    height: 45px;
+    margin-left: 50px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+.Signupform>span>.divsignup {
+    margin-left: 13px;
+}
+.loginfooter {
+    position: relative;
+    width: 800px;
+    height: 20px;
+    margin-left: 145px;
+    margin-top: 20px;
+    clear: both;
+}
+.loginfooter > ul > li {
+    list-style: none;
+    float: left;
+    margin-left: 15px;
+}
+.loginfooter > ul > li > a {
+   font-size: 12px;
+   text-decoration: none;
+   color: #131A37; 
+}
+.loginfooterli {
+    border-left: 1px solid rgba(128, 128, 128, 0.466);
+    padding-left: 13px;
+}
+.loginaddress {
+    position: relative;
+    width: 300px;
+    height: 90px;
+    margin-left: 280px;
+    margin-top: 10px;
+}
+.loginaddress > a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #131A37; 
+}
+.loginaddress > span {
+    font-size: 12px;
+    color: #131A37; 
+}
+.loginfooter2 {
+    position: relative;
+    width: 800px;
+    height: 20px;
+    margin-left: 110px;
+    margin-top: 20px;
+    clear: both;
+}
+.loginfooter2 > ul > li {
+    list-style: none;
+    float: left;
+    margin-left: 15px;
+}
+.loginfooter2 > ul > li > a {
+   font-size: 12px;
+   text-decoration: none;
+   color: #131A37; 
+}
+.loginfooterli2 {
+    border-left: 1px solid rgba(128, 128, 128, 0.466);
+    padding-left: 13px;
+}
+.loginaddress2 {
+    position: relative;
+    width: 300px;
+    height: 30px;
+    margin-left: 240px;
+    margin-top: 10px;
+}
+.loginaddress2 > a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #131A37; 
+}
+.loginaddress2 > span {
+    font-size: 12px;
+    color: #131A37; 
+}
+#passdiv2 {
+    display: none;
+    float: left;
+    margin-left: 50px;
+    margin-top: 3px;
+    font-size: 13px;
+    color: red;
+    width: 400px;
+
+}
+#passdiv {
+    display: none;
+    float: left;
+    margin-left: 50px;
+    margin-top: 3px;
+    font-size: 13px;
+    color: red;
+    width: 400px;
+}
+#bir_div {
+    display: none;
+    float: left;
+    margin-left: 50px;
+    margin-top: 3px;
+    font-size: 13px;
+    color: red;
+    width: 400px;
+}
+#bir_div2 {
+    position: absolute;
+    top: 55px;
+    left: 344px;
+    display: block;
+    float: left;
+    margin-top: 3px;
+    font-size: 13px;
+    color: red;
+    width: 400px;
+}
+#phonediv {
+    display: none;
+    float: left;
+    margin-left: 50px;
+    margin-top: 3px;
+    font-size: 13px;
+    color: red;
+    width: 400px;
+}
+#emaildiv {
+    display: none;
+    float: left;
+    margin-left: 50px;
+    margin-top: 3px;
+    font-size: 13px;
+    color: red;
+    width: 400px;
+}
+@font-face {
+    font-family: 'fromdamiM';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_ten@1.0/fromdamiM.woff') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+#nav_logo{
+    position: relative;
+    left: 50%;
+    top: 50px;
+    text-decoration: none;
+    text-align:center;
+    font-family: 'fromdamiM';
+    font-size: 50px;
+    color: #FFBC00;
+}
+
+/* 사업자 로그인 관련 */
+.buisnessmanform {
+	position: relative;
+    top: 125px;
+    left: 20px;
+    width: 800px;
+    height: 800px;
+    margin-left: 530px;
+    display: none;
+}
+.buisnessmannumberh4 {
+	position: relative;
+	margin: 0;
+	clear: both;
+	margin-left: 200px;
+    margin-top: 25px;
+}
+.buisnessmanstorenameh4 {
+	position: relative;
+	margin: 0;
+	clear: both;
+	margin-left: 200px;
+    margin-top: 25px;
+}
+.buisnessmanstoreaddressh4 {
+	position: relative;
+	margin: 0;
+	clear: both;
+	margin-left: 200px;
+    margin-top: 25px;
+}
+.foodkindsh4 {
+	    position: relative;
+    margin: 0;
+    clear: both;
+    margin-left: 200px;
+    margin-top: 25px;
+    top: -36px;
+}
+.buisnessmannumber {
+	    position: relative;
+    width: 450px;
+    height: 40px;
+    margin-left: 50px;
+    margin-top: 10px;
+    font-size: 15px;
+    left: 150px;
+}
+.buisnessmanstorename {
+	    position: relative;
+    width: 450px;
+    height: 40px;
+    margin-left: 50px;
+    margin-top: 10px;
+    font-size: 15px;
+    left: 150px;
+}
+.buisnessmanstoreaddress {
+	    position: relative;
+    width: 350px;
+    height: 40px;
+    margin-left: 50px;
+    margin-top: 10px;
+    font-size: 15px;
+    left: 150px;
+}
+.buisnessmanstoreaddress2 {
+	    position: relative;
+    width: 450px;
+    height: 40px;
+    margin-left: 50px;
+    margin-top: 10px;
+    font-size: 15px;
+    top: -43px;
+    left: 150px;
+}
+.buisnessmanstoreaddressfind {
+    position: relative;
+    left: 587px;
+    height: 44px;
+    width: 69px;
+    border: 1px solid gray;
+    text-align: center;
+    top: -46px;
+}
+.buisnessmanstoreaddressfind:hover {
+	cursor: pointer;
+	background: #FFBC00;
+}
+.buisnessmanstoreaddressfindspan {
+	position: relative;
+	top: 10px;
+}
+.foodkindsselect {
+	    position: relative;
+    width: 460px;
+    height: 44px;
+    margin: 0;
+    margin-left: 0px;
+    padding-left: 5px;
+    left: 199px;
+    top: -23px;
+    font-size: 15px;
+}

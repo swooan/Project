@@ -15,7 +15,6 @@
 		base-package="com.javaex.controller"></context:component-scan>
 	<mvc:default-servlet-handler />
 	<mvc:annotation-driven />
-	<mvc:resources location="/imgs/" mapping="/imgs/**"/>
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

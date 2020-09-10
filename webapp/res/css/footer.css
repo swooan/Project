@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/* 글씨체 */
+@font-face {
+    font-family: 'fromdamiM';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_ten@1.0/fromdamiM.woff') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+font-family: 'NanumSquareRound';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+
+body, html{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+/* footer */
+#footer_wrap, #footer_container, #footer_logo,
+#footer_slogan, #footer_count, #footer_explan, #download, #info{
+	color : #fff;
+}
+#footer_wrap{
+	background: #373737;
+	width: 100%;
+	height: 300px;
+	padding: 30px 50px 30px 50px;
+	box-sizing: border-box;
+}
+#footer_wrap a{
+	color : white;
+}
+#footer_container{
+	width: 550px;
+	overflow: hidden;
+	position:absolute;
+}
+#footer_logo{
+	font-family: 'fromdamiM';
+	font-size: 50px;
+	margin-bottom: 10px;
+}
+#footer_slogan{
+	font-family: 'NanumSquareRound';
+	margin-bottom: 10px;
+	font-size:16px;
+}	
+#footer_count{
+	font-family: 'NanumSquareRound';
+	margin-bottom: 10px;
+}
+#footer_explan{
+	font-family: 'NanumSquareRound';
+	margin-bottom: 10px;
+	font-size:11px;
+}
+#download{
+	font-family: 'NanumSquareRound';
+	margin-bottom: 10px;
+	float:right;
+	padding-left: 20px;
+}
+#download_img{
+	margin: 20px;
+	padding-left:15px;
+}
+#info{
+	font-family: 'NanumSquareRound';
+	font-size:11px;
+	
+}

@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+	blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+	em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+	b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+	details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+	output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	-webkit-font-smoothing: subpixel-antialiased!important;
+}
+.detail_wrap{
+	width: 730px;
+	border : 1px solid #f3f3f3;
+	padding : 0;
+	box-sizing: border-box;
+	color : #444;
+	clear: both;
+}
+.tip_content{
+	margin-bottom: 30px;	
+}
+.section_single{
+	margin : 0 11px 40px;
+}
+.tip_title,.section_title{
+	margin : 0;
+	margin-bottom : 10px;
+	font-weight: 600;
+}
+.tip_title{
+	color : #c91b3c;
+	margin-top : 10px;
+}
+.section_title{
+	color : #969696;
+	font-size: 14px;
+}
+.section_body{
+	font-size: 14px;	
+}
+.detail_section{
+	width : 310px;
+	display: inline-block;
+	margin : 0 10px 40px;
+}
+hr{
+	clear:both;
+	margin : 0;
+	margin-bottom : 15px;
+}
