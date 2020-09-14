@@ -3,7 +3,7 @@
 
 <mapper namespace="ShopUser">
 	<select id="getUser" parameterType="String" resultType="ShopUser">
-		<![CDATA[select * from ShopUser where USER_EMAIL=#{email} ]]> 		
+		<![CDATA[select * from ShopUser where USER_EMAIL=#{user_email} ]]> 		
 	</select>
 	
 	<insert id="signUp" parameterType="ShopUser">
@@ -14,7 +14,7 @@
 		<![CDATA[SELECT * FROM ShopUser]]> 		
 	</select>
 	
-	<resultMap type="ShopUser" id="ShopUserResult">
+	<!-- <resultMap type="ShopUser" id="ShopUserResult">
 		<id property="user_email" column="USER_EMAIL"/>
 		<result property="user_pw" column="USER_PW"/>
 		<result property="user_name" column="USER_NAME"/>
@@ -24,7 +24,7 @@
 		<result property="is_owner" column="IS_OWNER"/>
 		<result property="sign_date" column="SIGN_DATE"/>
 		<result property="point" column="POINT"/>
-	</resultMap>
+	</resultMap> -->
 	
 	<select id="cntShopUser" resultType="ShopUser">
 		<!-- 사업자 제외 -->

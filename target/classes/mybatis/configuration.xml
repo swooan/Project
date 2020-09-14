@@ -4,9 +4,7 @@
 	<!-- Mybatis 환경설정 -->
 	<typeAliases>
 		<typeAlias alias="ShopUser"	type="com.javaex.model.ShopUserVo"></typeAlias>
-
 		<typeAlias alias="Notice" type="com.javaex.model.NoticeVo"></typeAlias>
-
 		<typeAlias alias="Shop" type="com.javaex.model.ShopVo"></typeAlias>
 	</typeAliases>
 

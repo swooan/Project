@@ -38,6 +38,16 @@ public class ListController {
 		mav.setViewName("list");
 		return mav;
 	}
+	
+	@RequestMapping("/review_upload")
+	public void test(HttpServletRequest req,HttpServletResponse response) throws IOException {
+		System.out.println("/BabPool/review_upload");
+		String tmp = req.getParameter("star_span");
+		String tmp2 = req.getParameter("review_area");
+		response.getWriter().write("success");
+		
+		System.out.println("별점의 tmp : " + tmp + "\n" + "textarea : " + tmp2);		
+	}
 
 	@RequestMapping("/detail")
 	public ModelAndView detail(ModelAndView mav, HttpServletRequest request) {
@@ -52,16 +62,18 @@ public class ListController {
 	public void login(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException {
 		System.out.println("/BabPool/login");
 
-		String email = request.getParameter("user_id");
+		String user_email = request.getParameter("user_id");
 		String password = request.getParameter("user_pw");
-		System.out.println("email : " + email + "\npassword : " + password);
 
 		ShopUserVo user;
-		if (userDao.loginCheck(email) != null) {
-			user = userDao.loginCheck(email);
-			System.out.println("user : " + user);
-			response.getWriter().write("success");
-			session.setAttribute("sessionID", email);
+		if (userDao.loginCheck(user_email) != null) {
+			user = userDao.loginCheck(user_email);
+			if(user.getUser_pw().equals(password)) {
+				response.getWriter().write("success");
+				session.setAttribute("sessionID", user_email);
+			}else {
+				response.getWriter().write("fail");
+			}			
 		} else {
 			System.out.println("ID가 존재하지않음");
 			response.getWriter().write("fail");

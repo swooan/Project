@@ -14,8 +14,8 @@ public class ShopUserDao {
 		this.sqlSession = sqlsession;
 	}
 	
-	public ShopUserVo loginCheck(String email) {		
-		return sqlSession.selectOne("ShopUser.getUser",email);
+	public ShopUserVo loginCheck(String user_email) {		
+		return sqlSession.selectOne("ShopUser.getUser",user_email);
 	}
 	
 	public void signUp(ShopUserVo user) {

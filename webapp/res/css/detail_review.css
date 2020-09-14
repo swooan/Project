@@ -57,6 +57,10 @@ li{
 }
 #star_score{
 	width: 540px;
+	height : 19px;
+}
+#star_span{
+	height: 100%;
 }
 .list_name{
 	width : 105px;
@@ -64,4 +68,47 @@ li{
 	box-sizing: border-box;
 	margin : 0;
 	display: inline-block;
+}
+.title{
+	font-size: 16px;
+    font-weight: 600;
+    color: #444;
+}
+.sort_wrap{
+	float: none;
+    margin-bottom: 10px;
+}
+.sort_list{
+	float : right;
+	margin-bottom: 5px;
+    font-size: 9pt;
+    list-style: none;
+}
+.sort_list > li{
+	cursor: pointer;
+    display: inline-block;
+    padding: 0 5px;
+    border-right: 1px solid #444;
+}
+.sort_list > li:last-child{
+    border:none;
+}
+.author{
+	display: block;
+}
+.review{
+	position: relative;
+    width: 668px;
+    padding: 30px;
+    margin-bottom: 10px;
+    border: 1px solid #e3e3e3;
+    background: #fff;
+}
+.thumbnail{
+	width: 45px;
+    height: 45px;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+    margin-right: 13px;
 }
