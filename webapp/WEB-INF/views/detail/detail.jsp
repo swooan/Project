@@ -23,8 +23,10 @@
     
     <!-- container -->
     <div id="container">
-	<%ShopVo vo = (ShopVo)request.getAttribute("shopOne");
-		pageContext.setAttribute("star", vo.getScore());
+	<%
+	ShopVo shopvo = (ShopVo)request.getAttribute("shopOne");
+	pageContext.setAttribute("star", shopvo.getShop_score());
+	pageContext.setAttribute("shopidx", shopvo.getShop_idx());
 	%>
 	
         <!-- 상단에 배너가 있는 레이아웃 -->
@@ -37,9 +39,9 @@
                 <div class="inner_wrap">
                     <div class="inner">
                         <div class="title">
-                            <span class="name"><%=vo.getName() %></span>
-                            <span class="info">양재 · 한식 </span>
-                            <div class="count border_radius soft">예약 <%=vo.getReserv() %>건/ 리뷰 <%=vo.getReview() %>건 / 조회 <%=vo.getView()%>건 </div>
+                            <span class="name"><%=shopvo.getShop_title() %></span>
+                            <span class="info"><%=shopvo.getShop_location() %> · <%=shopvo.getFood_type() %> </span>
+                            <div class="count border_radius soft">예약 <%=shopvo.getShop_reserve() %>건/ 리뷰 <%=shopvo.getShop_review() %>건 / 조회 <%=shopvo.getShop_view()%>건 </div>
                             <button class="empty " data-type="poing.restaurants.favorite" data-id="28654">찜하기<i class="icon heart large "></i>
                             </button>
                         </div>
@@ -48,41 +50,41 @@
                                 <div class="name">별점</div>
                                 <div class="text">
                                 	<div id="star_score"></div>
-                                    <div id="shop_score"><span><%=vo.getScore()%></span></div> 
+                                    <div id="shop_score"><span><%=shopvo.getShop_score()%></span></div> 
                                 </div>
                             </li>
                             <li class="item">
                                 <div class="name">전화번호
                                 </div>
                                 <div class="text">
-                                    02-575-5668 </div>
+                                   <%=shopvo.getShop_phone()%> </div>
                             </li>
                             <li class="item">
                                 <div class="name">
-                                    주소
+                                    	주소
                                 </div>
                                 <div class="text">
-                                    서울 서초구 양재동 327-17 </div>
+                                    	<%=shopvo.getShop_addr() %></div>
                             </li>
                             <li class="item">
                                 <div class="name">
-                                    영업시간
+                                   	 영업시간
                                 </div>
                                 <div class="text">
-                                    24시 </div>
+                                    <%=shopvo.getShop_time() %> </div>
                             </li>
                             <li class="item">
                                 <div class="name">휴무일</div>
-                                <div class="text">연중무휴</div>
+                                <div class="text"><%=shopvo.getShop_close() %></div>
                             </li>
 
                             <li class="item">
                                 <div class="name">예산</div>
-                                <div class="text"><%=vo.getBudget()%></div>
+                                <div class="text"><%=shopvo.getBudget() %></div>
                             </li>
                             <li class="item description">
                                 <div class="name">한줄 설명</div>
-                                <div class="text"><%=vo.getComment()%></div>
+                                <div class="text"><%=shopvo.getShop_comment() %></div>
                             </li>
                         </ul>
                         <div class="slider">
@@ -97,6 +99,7 @@
                     </div>
                 </div>
             </div>
+            
             <script>/*$.ajax({url: '/restaurant/AjaxRestaurantInfo', type:'POST', data:{id:"28654", t:true} });*/</script>
         </div>
         <div id="content_wrap">
@@ -129,14 +132,15 @@
                 </div>
 
                 <script>
+                	// 버튼 누르면 링크 옮겨지기
                     $("#btnGoReview").on("click", function () {
-                        location.href = "/restaurant/detail/28654?review";
+                        location.href = "";
                     });
                 </script>
 
                 <div id="editor_recommend_restaurant" class="sidebar">
                     <div class="title">
-                        추천 리뷰어
+                       	 추천 리뷰어
                     </div>
                     <ul class="list">
                         <li class="item">
@@ -251,12 +255,24 @@
             function loadPage(){
             	
             	if($("#content > ul > .item.selected")[0] == $("#info")[0]) {            		
-            		$("#import").load("detail2/info.do", {"shopname" : "000"})
+            		$("#import").load("detail/info.do", {"shopidx" : ${shopidx}});
             	}
             	else if($("#content > ul > .item.selected")[0] == $("#photo")[0]) {
             		$("#import").unload();
-            		$("#import").load("detail2/photo.do")
+            		$("#import").load("detail/photo.do")
             	}
+				/*else if($("#content > ul > .item.selected")[0] == $("review")[0]){
+            		$("#import").unload();
+            		$("#import").load("detail2/review.do")
+            	}
+            	else if($("#content > ul > .item.selected")[0] == $("menu")[0]){
+            		$("#import").unload();
+            		$("#import").load("detail2/menu.do")
+            	}
+            	else id($("#content > ul > .item.selected")[0] == $("map")[0]){
+            		$("#import").unload();
+            		$("#import").load("detail2/map.do")
+            	} */
             }
             
             function asyncMovePage(url){

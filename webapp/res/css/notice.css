@@ -14,12 +14,14 @@ body{
 	border: 1px soild red;
 }
 .notice_title{
-	padding-left: 25%;
+	font-size: 2em;
+	padding: 1% 25%;
+	font-weight: bold;
 }
 #notice_list{
 	padding-left: 25%;
 	position: relative;
-	width: 1030px;
+	width: 940px;
 	margin-bottom: 120px;
 }
 #notice_list .notice_open{
@@ -52,4 +54,5 @@ body{
 	border: 0px solid red;
 	height: 200px;
 	display: none;
+	padding: 30px;
 }

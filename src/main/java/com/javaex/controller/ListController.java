@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.javaex.model.NoticeDao;
 import com.javaex.model.ShopDao;
 import com.javaex.model.ShopUserDao;
 import com.javaex.model.ShopUserVo;
@@ -26,19 +27,22 @@ public class ListController {
 
 	@Autowired
 	ShopUserDao userDao;
+	
+	@Autowired
+	NoticeDao noticedao;
 
 	@RequestMapping("/list")
 	public ModelAndView list(ModelAndView mav) {
-		System.out.println("/BobPool/list");
-		mav.addObject("shoplist", dao.shopList());
+		System.out.println("/BabPool/list");
+		mav.addObject("shopList", dao.shopList());
 		mav.setViewName("list");
 		return mav;
 	}
 
 	@RequestMapping("/detail")
 	public ModelAndView detail(ModelAndView mav, HttpServletRequest request) {
-		System.out.println("/BobPool/detail");
-		int shopId = Integer.parseInt(request.getParameter("shopId"));
+		System.out.println("/BabPool/detail");
+		int shopId = Integer.parseInt(request.getParameter("shopidx"));
 		mav.addObject("shopOne", dao.shopOne(shopId));
 		mav.setViewName("detail/detail");
 		return mav;
@@ -46,7 +50,7 @@ public class ListController {
 
 	@RequestMapping("/login")
 	public void login(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException {
-		System.out.println("/BobPool/login");
+		System.out.println("/BabPool/login");
 
 		String email = request.getParameter("user_id");
 		String password = request.getParameter("user_pw");
@@ -66,7 +70,7 @@ public class ListController {
 
 	@RequestMapping("/logout")
 	public ModelAndView logout(ModelAndView mav, HttpSession session) {
-		System.out.println("/BobPool/logout");
+		System.out.println("/BabPool/logout");
 		session.setAttribute("sessionID", null);
 		mav.setViewName("main");
 		return mav;
@@ -74,7 +78,7 @@ public class ListController {
 	
 	@RequestMapping("/join")
 	public ModelAndView signup(ModelAndView mav,HttpServletRequest req) {
-		System.out.println("/BobPool/signup");
+		System.out.println("/BabPool/signup");
 		String email = req.getParameter("email");
 		String pw = req.getParameter("pw");
 		String name = req.getParameter("name");
@@ -84,7 +88,7 @@ public class ListController {
 		int joinType = Integer.parseInt(req.getParameter("join_type"));
 		
 		if(joinType == 1) {
-			userDao.signUp(new ShopUserVo(email, pw, name, gender, birth, phone, "0", 0));
+			userDao.signUp(new ShopUserVo(email, pw, name, gender, birth, phone, "0", null, 0, null));
 		}else {
 			String buisnessNumber = req.getParameter("buisness_number");
 			String buisnessName = req.getParameter("buisness_name");
@@ -93,10 +97,36 @@ public class ListController {
 			String buisnessFoodType = req.getParameter("buisness_food_type");
 			
 			System.out.println(buisnessNumber + " " + buisnessName + " " + buisnessAddress + " " + buisnessAddressEtc + " " + buisnessFoodType);
-			userDao.signUp(new ShopUserVo(email, pw, name, gender, birth, phone, "1", 0));
+			userDao.signUp(new ShopUserVo(email, pw, name, gender, birth, phone, "1", null, 0, null));
 		}		
 		mav.setViewName("main");		
 		return mav;
 	}
+	
+	// 공지사항
+	@RequestMapping("/notice")
+	public ModelAndView notice(ModelAndView mav) {
+		System.out.println("/BabPool/notice => Notice_Page");
+		mav.addObject("Notice", noticedao.noticeList());
+		mav.setViewName("notice");
+		return mav;
+	}
+	@RequestMapping("/detail/info.do")
+	public ModelAndView detail_info(ModelAndView mav,HttpServletRequest request) {
+		System.out.println("/BabPool/detail_info");
+		int shop_idx = Integer.parseInt(request.getParameter("shopidx"));
+		mav.addObject("shopOne",dao.shopOne(shop_idx));
+		mav.setViewName("detail/detail_info");
+		return mav;
+	}
+	
+//	@RequestMapping("/detail2/photo.do")
+//	public ModelAndView detail_photo(ModelAndView mav,HttpServletRequest request) {
+//		System.out.println("/BabPool/detail_photo");
+//		int shop_idx = Integer.parseInt(request.getParameter("shopidx"));
+//		mav.addObject("shopOne",shopdao.shopOne(shop_idx));
+//		mav.setViewName("detail_photo");
+//		return mav;
+//	}
 
 }
