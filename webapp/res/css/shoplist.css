@@ -25,6 +25,7 @@ body {
 	text-align: center;
 	box-sizing: border-box;
 	font-weight : 700;
+	margin-top: 58px;
 }
 
 #list_banner>#banner_wrap {
@@ -45,17 +46,15 @@ body {
 
 #content_wrap {
 	width: 100%;
-	overflow: hidden;
 	font-family : 'Handon3gyeopsal300g',sans-serif;
 	font-weight : 700;
-	margin-left : 2%;	
+	height: 1850px;
 }
 
 #content_wrap>#content_list {
-	margin-left: 450px;
+	margin-left: 475px;
 	width: 730px;
 	position: relative;
-	height: 1700px;
 }
 
 #content_wrap>#content_list>#shop_number {

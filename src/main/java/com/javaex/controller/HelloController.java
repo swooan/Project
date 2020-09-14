@@ -8,7 +8,7 @@ public class HelloController {
 	@RequestMapping("/hello")
 	public String hello() {
 		System.out.println("/hellospring/hello");
-		return "detail_photo";
+		return "detail/detail_review";
 	}
 
 	@RequestMapping("/location")
@@ -25,28 +25,28 @@ public class HelloController {
 	@RequestMapping("/detail2/info.do")
 	public String detail_info() {
 		System.out.println("/hellospring/detail");
-		return "detail_info";
+		return "detail/detail_info";
 	}
 
 	@RequestMapping("/detail2/photo.do")
 	public String detail_photo() {
 		System.out.println("/hellospring/detail");
-		return "detail_photo";
+		return "detail/detail_photo";
 	}
 	@RequestMapping("/home")
 	public String home() {
 		System.out.println("/hellospring/home");
 		return "home";
+	}	
+	@RequestMapping("/main")
+	public String main() {
+		System.out.println("/hellospring/main");
+		return "main";
 	}
 	@RequestMapping("/signup")
 	public String signup() {
-		System.out.println("/hellospring/signup");
+		System.out.println("/BobPool/signup");
 		return "signup";
-	}
-	@RequestMapping("/main")
-	public String main() {
-		System.out.println("/hellospring/signup");
-		return "main";
 	}
 	@RequestMapping("/mypage")
 	public String mypage() {

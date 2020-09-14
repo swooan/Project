@@ -5,4 +5,8 @@
 	<select id="getUser" parameterType="String" resultType="ShopUserVo">
 		<![CDATA[select * from ShopUser where USER_EMAIL=#{email} ]]> 		
 	</select>
+	
+	<insert id="signUp" parameterType="ShopUserVo">
+		<![CDATA[insert into ShopUser VALUES(#{user_email},#{user_pw},#{user_name},#{user_gender},#{user_birth},#{user_phone},#{is_owner},sysdate,#{point}) ]]> 
+	</insert>
 </mapper>

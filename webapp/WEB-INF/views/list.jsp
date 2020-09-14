@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>밥풀 - 카페/베이커리</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet"href="<c:url value='${path}/res/css/shoplist.css?ver=1'/>">
+<link rel="stylesheet"href="<c:url value='${path}/res/css/shoplist.css'/>">
 <link rel="stylesheet"href="<c:url value='${path}/res/css/star-rating-svg.css'/>">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src="http://code.jquery.com/jquery.js"></script>

@@ -403,8 +403,7 @@
 				<hr class="loginhr1">
 				<input id="email" name="email" placeholder="   Email" type="text">
 				<input id="password" name="password" placeholder="   password"
-					type="password"> <a href="javascript:%20check_empty()"
-					id="submit">로그인</a>
+					type="password"> <a href="javascript:%20check_empty()" id="submit">로그인</a>
 				<div id="pwSearch">비밀번호 찾기</div>
 				<div id="idSearch">아이디 찾기</div>
 
@@ -525,7 +524,33 @@
 				endLoading();
 			}
 		});
+		
+		$('#submit').click(function (e) {
+			e.preventDefault();
+			var action = $('#form').attr("action");
+			
+			var form_data = {
+                    user_id: $('#email').val(),
+                    user_pw: $('#password').val()
+  			};
+			
+			$.ajax({
+                type: "POST",
+                url: action,
+                data: form_data,
+                success: function(data) {
+                  if(data == "success") {                    
+                    window.location.href = "main"
+                  } else {
+                	alert("로그인 실패");
+                  } 
+                },
+                error: function() {
+                	alert("에러발생");
+                }
 
+		     });
+		});	
 		var auto_complete_cursor = 0;
 		/* search box */
 		var query = {

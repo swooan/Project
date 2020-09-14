@@ -12,6 +12,19 @@ public class ShopUserVo {
 	String is_owner;
 	Date sign_date;
 	int point;
+	
+	public ShopUserVo() {}
+	public ShopUserVo(String user_email, String user_pw, String user_name, String user_gender, String user_birth,
+			String user_phone, String is_owner, int point) {
+		this.user_email = user_email;
+		this.user_pw = user_pw;
+		this.user_name = user_name;
+		this.user_gender = user_gender;
+		this.user_birth = user_birth;
+		this.user_phone = user_phone;
+		this.is_owner = is_owner;
+		this.point = point;
+	}
 	public String getUser_email() {
 		return user_email;
 	}

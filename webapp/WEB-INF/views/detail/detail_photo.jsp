@@ -48,20 +48,6 @@
 						<span>Sub-title #5</span>
 					</div> <img src="https://fakeimg.pl/350x200/0064CD/000?text=55555">
 				</li>
-				<li>
-					<div>
-						<h3>Slide #6</h3>
-						<span>Sub-title #6</span>
-					</div> <img src="https://fakeimg.pl/350x200/0064CE/000?text=66666">
-				</li>
-				<li>
-					<div>
-						<h3>Slide #7</h3>
-						<span>Sub-title #7</span>
-					</div> <img src="https://fakeimg.pl/350x200/0064CC/000?text=77777">
-				</li>
-
-
 			</ul>
 
 			<!--controls-->

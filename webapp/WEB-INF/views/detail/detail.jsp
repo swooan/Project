@@ -18,7 +18,7 @@
     <script src="http://code.jquery.com/jquery.js"></script>
 </head>
 
-<%@include file="top_bar.jsp"%>
+<%@include file="../top_bar.jsp"%>
 <body>
     
     <!-- container -->
@@ -219,7 +219,7 @@
             </div>
         </div>
     </div>
-    <%@include file="footer.jsp"%>
+    <%@include file="../footer.jsp"%>
 	<script src="<c:url value='${path}/res/js/jquery.star-rating-svg.js'/>"></script>
     <script>
         $(document).ready(function(){       			
