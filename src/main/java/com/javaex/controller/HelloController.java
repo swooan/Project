@@ -107,5 +107,35 @@ public class HelloController {
 		System.out.println("/BabPool/term");
 		return "term";
 	}
+	
+
+	@RequestMapping("/buisnessmypage")
+	public String buisnessmypage() {
+		System.out.println("/buisnessmypage");
+		return "buisnessmypage/buisness_mypage";
+	}
+
+	@RequestMapping("/buisnessmypage/registration")
+	public String registration() {
+		System.out.println("/registration");
+		return "buisnessmypage/buisness_mypage_registration";
+	}
+
+	@RequestMapping("/buisnessmypage/reservation")
+	public String reservation() {
+		System.out.println("/reservation");
+		return "buisnessmypage/buisness_mypage_reservation";
+	}
+
+	@RequestMapping("/buisnessmypage/reservation2")
+	public String reservation2() {
+		System.out.println("/reservation2");
+		return "buisnessmypage/buisness_mypage_reservation2";
+	}
+	@RequestMapping("/buisnessmypage/setting")
+	public String buisnesssetting() {
+		System.out.println("/setting");
+		return "buisnessmypage/buisness_mypage_setting";
+	}
 
 }

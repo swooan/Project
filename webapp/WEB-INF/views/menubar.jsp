@@ -10,7 +10,7 @@
 <link rel="stylesheet"
 	href="<c:url value='${path}/res/css/filters.css'/>">
 <script src="<c:url value='${path}/res/js/md5.js'/>"></script>
-<script src="http://code.jquery.com/jquery.js"></script>
+<!-- <script src="http://code.jquery.com/jquery.js"></script> -->
 <script>
 	$(document).ready(function() {
 		/* /* $('.section_price').on('click', function() {
@@ -35,9 +35,16 @@
 		$(".section_place").click(function(e) {
 			if ($("#nav_area").attr("class").indexOf("focus") == -1) {
 				$("#nav_city>ul").hide();
+				$("#nav_genre>.box").hide();
+				$(".filters_popup").hide();
+				$('#nav_wrap').css('z-index', 100);
+				
 				$('#nav_area>.box').show();
 				// focus주고 형제들은 focus지우기
 				$("#nav_area").addClass('focus').siblings().removeClass('focus');
+				
+				$(".section_add_info").addClass('is-open').siblings().removeClass('is-open');
+				
 				// 배경 어둡게
 				$("#nav_shading.shading_bg").show();	
 			} else {
@@ -49,9 +56,16 @@
 		$(".section_genre").click(function(e) {
 			if ($("#nav_genre").attr("class").indexOf("focus") == -1) {
 				$("#nav_city>ul").hide();
+				$("#nav_area>.box").hide();
+				$(".filters_popup").hide();
+				$('#nav_wrap').css('z-index', 100);
+				
 				$('#nav_genre>.box').show();
 				// focus주고 형제들은 focus지우기
 				$("#nav_genre").addClass('focus').siblings().removeClass('focus');
+				
+				$(".section_add_info").addClass('is-open').siblings().removeClass('is-open');
+				
 				// 배경 어둡게
 				$("#nav_shading.shading_bg").show();
 			} else {
@@ -62,6 +76,12 @@
 
 		$(".section_price").click(function(e) {
 			$(".filters_popup").hide();
+			
+			$("#nav_area>.box").hide();
+			$("#nav_genre>.box").hide();
+			$("#nav_search>#nav_recommend").hide();
+			$("#popup_body").hide();
+			
 			$('.section_price>.filters_popup').show();
 			$('#nav_wrap').css('z-index', 30);
 			// focus주고 형제들은 focus지우기
@@ -75,6 +95,12 @@
 
 		$(".section_add_info").click(function(e) {
 			$(".filters_popup").hide();
+			
+			$("#nav_area>.box").hide();
+			$("#nav_genre>.box").hide();
+			$("#nav_search>#nav_recommend").hide();
+			$("#popup_body").hide();
+			
 			$('.section_add_info>.filters_popup').show();
 			$('#nav_wrap').css('z-index', 30);
 			// focus주고 형제들은 focus지우기
@@ -88,6 +114,12 @@
 
 		$(".section_table").click(function(e) {
 			$(".filters_popup").hide();
+			
+			$("#nav_area>.box").hide();
+			$("#nav_genre>.box").hide();
+			$("#nav_search>#nav_recommend").hide();
+			$("#popup_body").hide();
+			
 			$('.section_table>.filters_popup').show();
 			$('#nav_wrap').css('z-index', 30);
 			// focus주고 형제들은 focus지우기
@@ -101,6 +133,12 @@
 
 		$(".section_liquor").click(function(e) {
 			$(".filters_popup").hide();
+			
+			$("#nav_area>.box").hide();
+			$("#nav_genre>.box").hide();
+			$("#nav_search>#nav_recommend").hide();
+			$("#popup_body").hide();
+			
 			$('.section_liquor>.filters_popup').show();
 			$('#nav_wrap').css('z-index', 30);
 			// focus주고 형제들은 focus지우기
@@ -290,7 +328,6 @@
 </script>
 </head>
 <body>
-	<%-- <%@include file="" %> --%>
 	<!-- 우측 메뉴바 -->
 	<!-- 필터 사이드 바 -->
 	<div id="filter_sidebar">

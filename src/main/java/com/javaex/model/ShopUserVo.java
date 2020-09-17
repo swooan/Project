@@ -9,7 +9,7 @@ public class ShopUserVo {
 	private String user_gender;		// 성별				NOT NULL
 	private String user_birth;		// 생년월일			NOT NULL
 	private String user_phone;		// 전화번호			NOT NULL
-	private String isOwner;		// 사업자 여부			NOT NULL
+	private String is_owner;		// 사업자 여부			NOT NULL
 	private Date sign_date;			// 가입날짜			NOT NULL
 	private int point;				// 포인트				NULL
 	private String user_photo;		// 사용자 사진			NULL
@@ -24,7 +24,7 @@ public class ShopUserVo {
 		this.user_gender = user_gender;
 		this.user_birth = user_birth;
 		this.user_phone = user_phone;
-		this.isOwner = isOwner;
+		this.is_owner = isOwner;
 		this.sign_date = sign_date;
 		this.point = point;
 		this.user_photo = user_photo;
@@ -79,11 +79,11 @@ public class ShopUserVo {
 	}
 
 	public String getIsOwner() {
-		return isOwner;
+		return is_owner;
 	}
 
 	public void setIsOwner(String isOwner) {
-		this.isOwner = isOwner;
+		this.is_owner = isOwner;
 	}
 
 	public Date getSign_date() {
@@ -114,6 +114,6 @@ public class ShopUserVo {
 	public String toString() {
 		return "ShopUserVo [user_email=" + user_email + ", user_pw=" + user_pw + ", user_name=" + user_name
 				+ ", user_gender=" + user_gender + ", user_birth=" + user_birth + ", user_phone=" + user_phone
-				+ ", isOwner=" + isOwner + ", sign_date=" + sign_date + ", point=" + point + ", user_photo=" + user_photo +"]";
+				+ ", isOwner=" + is_owner + ", sign_date=" + sign_date + ", point=" + point + ", user_photo=" + user_photo +"]";
 	}
 }

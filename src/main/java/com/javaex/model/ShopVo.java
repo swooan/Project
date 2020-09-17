@@ -56,6 +56,29 @@ public class ShopVo {
 		this.shop_review = shop_review;
 		this.shop_photo = shop_photo;
 	}
+	
+	
+
+	public ShopVo(String shop_title,String shop_id, String shop_addr, String shop_location, String food_type, String shop_tip,
+			String budget, String shop_comment, String shop_phone, String[] shop_time, String shop_addinfo,
+			String shop_tb, String shop_alcohol, String shop_car, String shop_close) {
+		this.shop_title = shop_title;
+		this.shop_addr = shop_addr;
+		this.shop_location = shop_location;
+		this.shop_id = shop_id;
+		this.food_type = food_type;
+		this.shop_tip = shop_tip;
+		this.budget = budget;
+		this.shop_comment = shop_comment;
+		this.shop_phone = shop_phone;
+		this.shop_time = shop_time[0] + ":"+shop_time[1] + "-" + shop_time[2] + ":" + shop_time[3];
+		this.shop_addinfo = shop_addinfo;
+		this.shop_tb = shop_tb;
+		this.shop_alcohol = shop_alcohol;
+		this.shop_car = shop_car;
+		this.shop_close = shop_close;
+		
+	}
 
 	public String getShop_id() {
 		return shop_id;

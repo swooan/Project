@@ -18,6 +18,7 @@ import com.javaex.model.NoticeDao;
 import com.javaex.model.ShopDao;
 import com.javaex.model.ShopUserDao;
 import com.javaex.model.ShopUserVo;
+import com.javaex.model.ShopVo;
 
 @Controller
 public class ListController {
@@ -32,9 +33,12 @@ public class ListController {
 	NoticeDao noticedao;
 
 	@RequestMapping("/list")
-	public ModelAndView list(ModelAndView mav) {
+	public ModelAndView list(ModelAndView mav, HttpServletRequest request) {
 		System.out.println("/BabPool/list");
-		mav.addObject("shopList", dao.shopList());
+		mav.addObject("shopList",
+				dao.shopSearch(request.getParameter("location"), request.getParameterValues("shop_addr"),
+						request.getParameterValues("food_type"), request.getParameter("string_search"),
+						request.getParameter("solt")));
 		mav.setViewName("list");
 		return mav;
 	}
@@ -70,6 +74,7 @@ public class ListController {
 			user = userDao.loginCheck(user_email);
 			if(user.getUser_pw().equals(password)) {
 				response.getWriter().write("success");
+				session.setAttribute("is_owner", user.getIsOwner());
 				session.setAttribute("sessionID", user_email);
 			}else {
 				response.getWriter().write("fail");
@@ -140,5 +145,39 @@ public class ListController {
 //		mav.setViewName("detail_photo");
 //		return mav;
 //	}
+	
+	@RequestMapping("/buisness_update")
+	public ModelAndView buisnessmypage_update(ModelAndView mav ,HttpServletRequest req) {
+		String shop_title = req.getParameter("shop_title");
+		String shop_addr = req.getParameter("shop_addr");
+		String shop_location = req.getParameter("shop_location");
+		String shop_id = req.getParameter("shop_id");
+		String food_type = req.getParameter("food_type");
+		String budget = req.getParameter("budget");
+		String shop_tip = req.getParameter("shop_tip");
+		String shop_comment = req.getParameter("shop_comment");
+		String shop_phone = req.getParameter("shop_phone");
+		String[] shop_time = req.getParameterValues("shop_time");
+		String shop_addinfo = req.getParameter("shop_addinfo");
+		String shop_tb = req.getParameter("shop_tb");
+		String shop_alcohol = req.getParameter("shop_alcohol");
+		String shop_car = req.getParameter("shop_car");
+		String shop_close = req.getParameter("shop_close");
+		ShopVo s = new ShopVo(shop_title,shop_id,shop_addr,shop_location,food_type,
+				shop_tip,budget,shop_comment,shop_phone,shop_time,shop_addinfo,shop_tb,
+				shop_alcohol,shop_car,shop_close);
+		dao.updateShop(s);
+		mav.setViewName("buisnessmypage");
+		System.out.println(s.toString());
+		return mav;
+	}
+	
+	@RequestMapping("/buisnessmypage/registration2")
+	public ModelAndView registration2(ModelAndView mav, HttpSession session) {
+		
+		mav.addObject("shopOwnerList", dao.shopOwnerList((String)session.getAttribute("sessionID")));
+		mav.setViewName("buisnessmypage/buisness_mypage_registration2");
+		return mav;
+	}
 
 }

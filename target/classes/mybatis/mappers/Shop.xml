@@ -30,12 +30,66 @@
 		<result property="shop_close" column="SHOP_CLOSE"/>
 		<result property="shop_review" column="SHOP_REVIEW"/>		
 	</resultMap>
+	
+	<select id="shopSearch" resultType="Shop" parameterType="hashMap">
+		select * from Shop where 1=1
+		<if test="location != null">
+			and SHOP_LOCATION = #{location}
+		</if>
+
+		<if test="shop_addrArr != null">
+			and
+			<foreach collection="shop_addrArr" item="shop_addr" index="index"
+				separator="or">
+				SHOP_ADDR like '%' || #{shop_addr} || '%'</foreach>
+		</if>
+
+		<if test="food_typeArr != null">
+			and FOOD_TYPE IN
+			<foreach collection="food_typeArr" item="food_type" index="index"
+				open="(" separator="," close=")">
+				#{food_type}
+			</foreach>
+		</if>
+
+		<if test="string_search != null">
+			and(
+			SHOP_TITLE like '%' || #{string_search} || '%'
+			or
+			SHOP_ADDR like '%' || #{string_search} || '%'
+			or
+			SHOP_LOCATION like '%' || #{string_search} || '%'
+			or
+			FOOD_TYPE like '%' || #{string_search} || '%'
+			)
+		</if>
+
+		<if test="solt != null">
+			<if test='solt == "1"'>
+				order by SHOP_SCORE DESC
+			</if>
+			<if test='solt == "2"'>
+				order by SHOP_RESERVE DESC
+			</if>
+			<if test='solt == "3"'>
+				order by SHOP_VIEW DESC
+			</if>
+		</if>
+
+	</select>
 
 	<select id="shopOne" parameterType="int" resultType="Shop">
 	<!-- 가게정보 -->
 		<![CDATA[
 		SELECT * FROM Shop WHERE shop_idx=#{Shop_idx}
 		]]>		
+	</select>
+	
+	<select id="shopOwnerList" parameterType="String" resultType="Shop">
+		<!-- 가게정보 -->
+		<![CDATA[
+		SELECT * FROM Shop WHERE user_email=#{user_email}
+		]]>
 	</select>
 	
 	<select id="cntShopReserve" resultType="Shop">
