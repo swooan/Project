@@ -5,11 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HelloController {
-	@RequestMapping("/hello")
-	public String hello() {
-		System.out.println("/BabPool/hello");
-		return "detail/detail_review";
-	}
+	/*
+	 * @RequestMapping("/hello") public String hello() {
+	 * System.out.println("/BabPool/hello"); return "detail/detail_review"; }
+	 */
 
 	@RequestMapping("/location")
 	public String location() {
@@ -41,27 +40,7 @@ public class HelloController {
 	public String signup() {
 		System.out.println("/BobPool/signup");
 		return "signup";
-	}
-	@RequestMapping("/mypage")
-	public String mypage() {
-		System.out.println("/BabPool/mypage");
-		return "mypage/mypage";
-	}
-	@RequestMapping("/mypage/reservation")
-	public String mypage_reservation() {
-		System.out.println("/BabPool/mypage/mypage_reservation");
-		return "mypage/mypage_reservation";
-	}
-	@RequestMapping("/mypage/reservation2")
-	public String mypage_reservation2() {
-		System.out.println("/BabPool/mypage/mypage_reservation2");
-		return "mypage/mypage_reservation2";
-	}
-	@RequestMapping("/mypage/reservation3")
-	public String mypage_reservation3() {
-		System.out.println("/BabPool/mypage/mypage_reservation3");
-		return "mypage/mypage_reservation3";
-	}
+	}	
 	@RequestMapping("/mypage/review")
 	public String mypage_review() {
 		System.out.println("/BabPool/mypage/mypage_review");
@@ -77,26 +56,7 @@ public class HelloController {
 		System.out.println("/BabPool/mypage/mypage_review3");
 		return "mypage/mypage_review3";
 	}
-	@RequestMapping("/mypage/star")
-	public String mypage_star() {
-		System.out.println("/BabPool/mypage/mypage_review");
-		return "mypage/mypage_star";
-	}
-	@RequestMapping("/mypage/notice")
-	public String mypage_notice() {
-		System.out.println("/BabPool/mypage/mypage_notice");
-		return "mypage/mypage_notice";
-	}
-	@RequestMapping("/mypage/notice2")
-	public String mypage_notice2() {
-		System.out.println("/BabPool/mypage/mypage_notice2");
-		return "mypage/mypage_notice2";
-	}
-	@RequestMapping("/mypage/notice3")
-	public String mypage_notice3() {
-		System.out.println("/BabPool/mypage/mypage_notice3");
-		return "mypage/mypage_notice3";
-	}
+	
 	@RequestMapping("/mypage/setting")
 	public String mypage_setting() {
 		System.out.println("/BabPool/mypage/mypage_setting");
@@ -136,6 +96,91 @@ public class HelloController {
 	public String buisnesssetting() {
 		System.out.println("/setting");
 		return "buisnessmypage/buisness_mypage_setting";
+	}
+	@RequestMapping("/menubar")
+	public String menubar() {
+		System.out.println("/hellospring/menubar");
+		return "menubar";
+	}
+	@RequestMapping("/admin")
+	public String admin() {
+		System.out.println("/hellospring/admin/admin");
+		return "admin/admin";
+	}
+	@RequestMapping("/admin/admin_member")
+	public String admin_member() {
+		System.out.println("/hellospring/admin/admin_member");
+		return "admin/admin_member";
+	}
+	@RequestMapping("/admin/admin_company")
+	public String admin_company() {
+		System.out.println("/hellospring/admin/admin_company");
+		return "admin/admin_company";
+	}
+	@RequestMapping("/admin/admin_company2")
+	public String admin_company2() {
+		System.out.println("/hellospring/admin/admin_company2");
+		return "admin/admin_company2";
+	}
+	@RequestMapping("/admin/admin_resSitu")
+	public String admin_resSitu() {
+		System.out.println("/hellospring/admin/admin_resSitu");
+		return "admin/admin_resSitu";
+	}
+	@RequestMapping("/admin/admin_resRegi")
+	public String admin_resRegi() {
+		System.out.println("/hellospring/admin/admin_resRegi");
+		return "admin/admin_resRegi";
+	}
+	@RequestMapping("/admin/admin_numerical1")
+	public String admin_numerical1() {
+		System.out.println("/hellospring/admin/admin_numerical1");
+		return "admin/admin_numerical1";
+	}
+	@RequestMapping("/admin/admin_numerical2")
+	public String admin_numerical2() {
+		System.out.println("/hellospring/admin/admin_numerical2");
+		return "admin/admin_numerical2";
+	}
+	@RequestMapping("/admin/admin_numerical3")
+	public String admin_numerical3() {
+		System.out.println("/hellospring/admin/admin_numerical3");
+		return "admin/admin_numerical3";
+	}
+	@RequestMapping("/admin/admin_numerical4")
+	public String admin_numerical4() {
+		System.out.println("/hellospring/admin/admin_numerical4");
+		return "admin/admin_numerical4";
+	}
+	@RequestMapping("/admin/admin_numerical5")
+	public String admin_numerical5() {
+		System.out.println("/hellospring/admin/admin_numerical5");
+		return "admin/admin_numerical5";
+	}
+	@RequestMapping("/admin/admin_numerical6")
+	public String admin_numerical6() {
+		System.out.println("/hellospring/admin/admin_numerical6");
+		return "admin/admin_numerical6";
+	}
+	@RequestMapping("/admin/admin_numerical7")
+	public String admin_numerical7() {
+		System.out.println("/hellospring/admin/admin_numerical7");
+		return "admin/admin_numerical7";
+	}
+	@RequestMapping("/admin/admin_notice")
+	public String admin_notice() {
+		System.out.println("/hellospring/admin/admin_notice");
+		return "admin/admin_notice";
+	}
+	@RequestMapping("/admin_notice_info")
+	public String admin_notice_info() {
+		System.out.println("/hellospring/admin/admin_notice_info");
+		return "admin/admin_notice_info";
+	}
+	@RequestMapping("/admin_notice_modify")
+	public String admin_notice_modify() {
+		System.out.println("/hellospring/admin/admin_notice_modify");
+		return "admin/admin_notice_modify";
 	}
 
 }

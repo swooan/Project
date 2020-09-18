@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.javaex.model.NoticeDao;
+import com.javaex.model.ReviewDao;
 import com.javaex.model.ShopDao;
 import com.javaex.model.ShopUserDao;
 import com.javaex.model.ShopUserVo;
@@ -31,6 +32,9 @@ public class ListController {
 	
 	@Autowired
 	NoticeDao noticedao;
+	
+	@Autowired
+	ReviewDao reviewdao;
 
 	@RequestMapping("/list")
 	public ModelAndView list(ModelAndView mav, HttpServletRequest request) {
@@ -74,12 +78,14 @@ public class ListController {
 			user = userDao.loginCheck(user_email);
 			if(user.getUser_pw().equals(password)) {
 				response.getWriter().write("success");
-				session.setAttribute("is_owner", user.getIsOwner());
+				session.setAttribute("is_owner", user.getIs_owner());
 				session.setAttribute("sessionID", user_email);
 			}else {
 				response.getWriter().write("fail");
 			}			
-		} else {
+		}else if(user_email.equals("admin")) {
+			response.getWriter().write("admin");
+		}else {
 			System.out.println("ID가 존재하지않음");
 			response.getWriter().write("fail");
 		}
@@ -105,7 +111,7 @@ public class ListController {
 		int joinType = Integer.parseInt(req.getParameter("join_type"));
 		
 		if(joinType == 1) {
-			userDao.signUp(new ShopUserVo(email, pw, name, gender, birth, phone, "0", null, 0, null));
+			userDao.signUp(new ShopUserVo(email, pw, name, gender, birth, phone, "0", null, 0, null,0));
 		}else {
 			String buisnessNumber = req.getParameter("buisness_number");
 			String buisnessName = req.getParameter("buisness_name");
@@ -114,7 +120,7 @@ public class ListController {
 			String buisnessFoodType = req.getParameter("buisness_food_type");
 			
 			System.out.println(buisnessNumber + " " + buisnessName + " " + buisnessAddress + " " + buisnessAddressEtc + " " + buisnessFoodType);
-			userDao.signUp(new ShopUserVo(email, pw, name, gender, birth, phone, "1", null, 0, null));
+			userDao.signUp(new ShopUserVo(email, pw, name, gender, birth, phone, "1", null, 0, null,0));
 		}		
 		mav.setViewName("main");		
 		return mav;
@@ -163,9 +169,10 @@ public class ListController {
 		String shop_alcohol = req.getParameter("shop_alcohol");
 		String shop_car = req.getParameter("shop_car");
 		String shop_close = req.getParameter("shop_close");
+		String shop_photo = null;
 		ShopVo s = new ShopVo(shop_title,shop_id,shop_addr,shop_location,food_type,
 				shop_tip,budget,shop_comment,shop_phone,shop_time,shop_addinfo,shop_tb,
-				shop_alcohol,shop_car,shop_close);
+				shop_alcohol,shop_car,shop_close,shop_photo);
 		dao.updateShop(s);
 		mav.setViewName("buisnessmypage");
 		System.out.println(s.toString());
@@ -177,6 +184,14 @@ public class ListController {
 		
 		mav.addObject("shopOwnerList", dao.shopOwnerList((String)session.getAttribute("sessionID")));
 		mav.setViewName("buisnessmypage/buisness_mypage_registration2");
+		return mav;
+	}
+	
+	@RequestMapping("/hello")
+	public ModelAndView hello(ModelAndView mav) {
+		System.out.println("/BabPool/hello");
+		mav.addObject("reviewList",reviewdao.reviewList() );
+		mav.setViewName("detail/detail_review");
 		return mav;
 	}
 

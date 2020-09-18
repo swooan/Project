@@ -559,7 +559,9 @@
 				success : function(data) {
 					if (data == "success") {
 						window.location.href = "main"
-					} else {
+					}else if(data == "admin"){
+						window.location.href = "admin"
+					}else {
 						alert("로그인 실패");
 					}
 				},

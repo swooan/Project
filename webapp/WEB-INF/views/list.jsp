@@ -12,17 +12,17 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
 	rel="stylesheet">
+<link rel="stylesheet" href="<c:url value='${path}/res/css/shoplist.css?ver=1'/>">
 <link rel="stylesheet"
-	href="<c:url value='${path}/res/css/shoplist.css?ver=1'/>">
-<link rel="stylesheet"
-	href="<c:url value='${path}/res/css/star-rating-svg.css'/>">
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+
 <script src="http://code.jquery.com/jquery.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 </head>
 <body>
-
 	<%@include file="top_bar.jsp"%>
-	<script src="<c:url value='${path}/res/js/jquery.star-rating-svg.js'/>"></script>
+	
 	<%
 		List<ShopVo> shoplist = (ArrayList<ShopVo>) request.getAttribute("shopList");
 	%>
@@ -63,7 +63,7 @@
 				<%
 					for (int i = 0; i < shoplist.size(); i++) {
 						ShopVo shopvo = shoplist.get(i);
-						if ((i+1) % 3 == 1) {
+						if ((i + 1) % 3 == 1) {
 				%>
 				<div class="shop_first">
 					<div class="list_img">
@@ -82,7 +82,7 @@
 					</div>
 					<div class="shop_desc">
 						<div class="shop_star">
-							<span class="star_span" id="shop_tmp<%=shopvo.getShop_idx()%>"></span><span
+							<span class="star_span" id="shop_tmp<%=shopvo.getShop_idx()%>" style="padding:0;display: inline-block;"></span><span
 								class="shop_score"><%=shopvo.getShop_score()%>점</span>
 						</div>
 						<div class="shop_budget"><%=shopvo.getBudget()%></div>
@@ -114,7 +114,7 @@
 					</div>
 					<div class="shop_desc">
 						<div class="shop_star">
-							<span class="star_span" id="shop_tmp<%=shopvo.getShop_idx()%>"></span><span
+							<span class="star_span" id="shop_tmp<%=shopvo.getShop_idx()%>" style="padding:0;display: inline-block;"></span><span
 								class="shop_score"><%=shopvo.getShop_score()%>점</span>
 						</div>
 						<div class="shop_budget"><%=shopvo.getBudget()%></div>
@@ -131,7 +131,7 @@
 				%>
 			</div>
 			<!--상점 목록 끝 -->
-			<%@include file="menubar.jsp" %>
+			<%@include file="menubar.jsp"%>
 			<!--페이지 번호 시작-->
 			<div id="page_list">
 				<ul>
@@ -144,17 +144,18 @@
 	<!--목록 끝  -->
 	<%@include file="footer.jsp"%>
 </body>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
 <script>
-      <c:forEach items="${shopList}" var="shop">         
-         $("#shop_tmp${shop.shop_idx}").starRating({
-            initialRating : ${shop.shop_score},
-            starShape : 'rounded',
-            useGradient : false,
-            activeColor : '#f05e23',
-            strokeWidth : 5,
-            readOnly : true,
-            starSize : 20
-         });
+      <c:forEach items="${shopList}" var="shop">
+      $("#shop_tmp${shop.shop_idx}").rateYo({
+    	  
+  		rating :  ${shop.shop_score},
+  		starWidth: "20px",
+  	    halfStar: true,
+  	  	readOnly: true,
+  		starSvg : '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>'
+  		});  
       </c:forEach>
 
       $(".star_ > i ").on('click',function (e) {

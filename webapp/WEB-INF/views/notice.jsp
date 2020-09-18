@@ -50,20 +50,19 @@
 <script>
 $("#notice_list>.notice_open").click(function(e){		
 	if($(this).children(".notice_body").css("display") == "none") {
+		
 		$(".notice_body").hide();
+		$("#notice_list>.notice_open").children(".notice_title").children("span").children("img").attr('src', '<c:url value="${path}/res/image/down.png"/>');
+		
 		$(this).children(".notice_body").show();
 		$(this).children(".notice_title").children("span").children("img").attr('src', '<c:url value="${path}/res/image/up.png"/>');
 	}
 	else {
 		$(this).children(".notice_body").hide();
-		$("#notice_list .notice_title>span>img").attr('src', '<c:url value="${path}/res/image/down.png"/>');
+		$(this).children(".notice_title").children("span").children("img").attr('src', '<c:url value="${path}/res/image/down.png"/>');
 	}
 	e.stopPropagation();
 });
-
-/*$("#notice_list .notice_open").click(function() {
-    $(this).toggleClass('open').siblings().removeClass('open');
-});*/
 </script>
 </body>
 </html>
