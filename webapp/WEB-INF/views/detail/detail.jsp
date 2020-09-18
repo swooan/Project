@@ -399,42 +399,65 @@
             	} 
             }
             
-            //지도 관련
-$.getScript('https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=cyozvucbzs', function(){
-	var cityhall = new naver.maps.LatLng(37.5666805, 126.9784147),
-    map = new naver.maps.Map('naverMap', {
-        center: cityhall,
-        zoom: 15
-    }),
-    marker = new naver.maps.Marker({
-        map: map,
-        position: cityhall,
-    });
+          //지도 관련
+            var shop_addr = "${shopOne.shop_addr}".substring(0,"${shopOne.shop_addr}".indexOf("|"))
+            if(shop_addr == ""){
+               shop_addr = "${shopOne.shop_addr}"
+            }
+            var shop_position = new naver.maps.LatLng(37.5666805, 126.9784147),
+             map = new naver.maps.Map('naverMap', {
+                 center: shop_position,
+                 zoom: 15
+             }),
+             marker = new naver.maps.Marker({
+                 map: map,
+                 position: shop_position,
+             });
+             naver.maps.Service.geocode({
+                 address: shop_addr
+             }, function(status, response) {
+                 if (status !== naver.maps.Service.Status.OK) {
+                     return alert('지도데이터를 불러올수 없습니다!')
+                 }
 
- 		var contentString = [
-    '<div class="iw_inner">',
-    '   <h3>${shopOne.shop_title}</h3>',
-    '   <p>${shopOne.shop_addr}<br/>',
-    '       <img src="<c:url value='${path}/res/image/walkerhill1.jpg'/>" width="55" height="55" alt="서울시청" class="thumb" /><br />',
-    '       ${shopOne.shop_phone} | ${shopOne.shop_time} | ${shopOne.shop_close}<br/>',
-    '   </p>',
-    '</div>'
-].join('');
+                 var result = response.result,
+                     items = result.items; 
+                 if(items.length == 0){
+                    $("#map").click(function () {
+                       alert('지도데이터를 불러올수 없습니다!')
+                  })
+                 }else{
+                 shop_position = new naver.maps.LatLng(items[0].point.y, items[0].point.x)
+                 map.setCenter(shop_position)
+                 map.setZoom(15)
+                 marker.setPosition(shop_position)
+                 marker.setMap(map)
+                 }
+             });
 
-var infowindow = new naver.maps.InfoWindow({
-content: contentString
-});
+                var contentString = [
+             '<div class="iw_inner">',
+             '   <h3>${shopOne.shop_title}</h3>',
+             '   <p>${shopOne.shop_addr}<br/>',
+             '       <img src="<c:url value='${path}/res/image/walkerhill1.jpg'/>" width="55" height="55" alt="서울시청" class="thumb" /><br />',
+             '       ${shopOne.shop_phone} | ${shopOne.shop_time} | ${shopOne.shop_close}<br/>',
+             '   </p>',
+             '</div>'
+            ].join('');
 
-naver.maps.Event.addListener(marker, "click", function(e) {
-if (infowindow.getMap()) {
-    infowindow.close();
-} else {
-    infowindow.open(map, marker);
-}
-}); 
+            var infowindow = new naver.maps.InfoWindow({
+            content: contentString
+            });
+            
+            naver.maps.Event.addListener(marker, "click", function(e) {
+            if (infowindow.getMap()) {
+                infowindow.close();
+            } else {
+                infowindow.open(map, marker);
+            }
+            }); 
 
-			});
-        //지도관련 끝
+                 //지도관련 끝
 });
     </script>
 </body>

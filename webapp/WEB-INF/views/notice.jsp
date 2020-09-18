@@ -25,8 +25,7 @@
 	List<NoticeVo> noticeList = (List<NoticeVo>)request.getAttribute("Notice");
 	for(int i =0; i<noticeList.size(); i++){
 		NoticeVo noticevo = noticeList.get(i);
-		%>
-	
+		%>	
 		<li class="notice_open">
 			<div class="notice_title">
 				<%=noticevo.getNotice_title() %>
