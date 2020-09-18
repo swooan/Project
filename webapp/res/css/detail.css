@@ -369,9 +369,26 @@ i.icon.star.large.even.active{background-position:-314px -41px}
 }
 /* 지도관련 */
 #naverMap{
-	display: none;
-	width: 730px;
-	height: 530px;
+   display: none;
+   width: 730px;
+   height: 530px;
+   
+}
+.marker_tooltip{
+   padding: 10px;
+}
+.marker_tooltip p{
+   text-align: right;
+}
+.marker_tooltip i1{
+   float: left;
+   text-align: left;
+}
+.marker_tooltip i2{
+   text-align: left;
+}
+.marker_tooltip img{
+   margin-left: 10px;
 }
 
 /* 예약관련 */
